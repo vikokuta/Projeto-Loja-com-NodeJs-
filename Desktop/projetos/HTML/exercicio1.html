@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EX 1</title>
+    <style>
+        body{
+            width: 600px;
+            margin: 0 auto;
+            padding: 0 20px 20px 20px;
+        }
+        button{
+            border-left: 50px;
+            border-radius: 40;
+        }
+        img{
+            width: 50em;
+           display: block; 
+           margin: 0 auto;
+        }
+    </style>
+  </head>
+
+  <body> 
+
+    <img src="../img/wallpaper1.jpg" id="foto">
+    <button type= button style="position: center;">Mudar imagem</button>
+
+    <script>
+        let cont = 0;
+        document.querySelector('button').onclick = function() {
+        let myImage = document.querySelector('#foto');
+
+        var mySrc = myImage.getAttribute('src');
+        
+
+        let array= ['../img/wallpaper1.jpg','../img/wallpaper2.jpg','../img/wallpaper3.jpg','../img/icon.jpg'];
+
+        if(cont < (array.length-1)){
+        document.getElementById('foto').src = array[cont+1];
+        cont++;
+        }else{
+            document.getElementById('foto').src = array[0];
+            cont=0;
+        }
+    
+}
+    </script>    
+  </body>
